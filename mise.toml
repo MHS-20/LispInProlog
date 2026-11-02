@@ -1,0 +1,13 @@
+[settings]
+experimental = true
+
+[tools]
+"conda:swi-prolog" = "10.0.0"
+
+[tasks.repl]
+description = "Start the Lisp REPL, optionally loading files"
+run = "swipl --stack-limit=128m src/main.pl"
+
+[tasks.test]
+description = "Run the test suite"
+run = "swipl -g run_tests -t halt test/lisp.plt"
